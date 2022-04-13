@@ -17,7 +17,7 @@ export class Employer {
   @Prop()
   name: string;
 
-  @ApiProperty({ example: 'BY', description: 'Country code', required: true })
+  @ApiProperty({ example: 'BY', description: 'Country code'})
   @Prop()
   countryCode: string;
 
@@ -27,7 +27,7 @@ export class Employer {
   })
   @Prop({
     type: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+      { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     ],
   })
   userAccounts: User[];
@@ -37,9 +37,7 @@ export class Employer {
     description: 'Array of employer`s users',
   })
   @Prop({
-    type: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Info', required: true },
-    ],
+    type: { type: mongoose.Schema.Types.ObjectId, ref: 'Info' },
   })
   info: Info;
 }

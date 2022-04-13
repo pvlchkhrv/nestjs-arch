@@ -1,5 +1,5 @@
-import { IsString, ValidateNested } from 'class-validator';
-import { Info } from '../entities/info.entity';
+import { IsNotEmpty, IsString } from 'class-validator';
+import { Employer, Info } from '../entities';
 import { PartialType } from '@nestjs/mapped-types';
 
 export class CreateEmployerDto {
@@ -9,8 +9,14 @@ export class CreateEmployerDto {
   @IsString()
   countryCode: string;
 
-  @ValidateNested()
-  info: Info;
+  @IsNotEmpty()
+  infoInfo: Info;
 }
 
-export class UpdateEmployerDto extends PartialType(CreateEmployerDto){}
+export class UpdateEmployerDto extends PartialType(CreateEmployerDto) {}
+
+export class CreateEmployerResponseDto {
+  success: boolean;
+
+  createdEmployer: Employer;
+}

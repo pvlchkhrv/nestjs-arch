@@ -2,14 +2,14 @@ import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { IDataServices } from '../../core/abstracts';
 import { InjectModel } from '@nestjs/mongoose';
 import {
-  Address,
   AddressDocument,
-  Employer,
   EmployerDocument,
-  Info,
   InfoDocument,
-  User,
   UserDocument,
+  Address,
+  Employer,
+  Info,
+  User,
 } from './schemas';
 import { Model } from 'mongoose';
 import { MongoGenericRepository } from './mongo-generic.repository';
